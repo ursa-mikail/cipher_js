@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="./Site.css" rel="stylesheet" type="text/css">
+    <link href="./mathjax.css" rel="stylesheet" type="text/css">
+
+    <title>Content Page</title>
+</head>
+<body>
+
+<h2>Testing</h2>
+<h3>Hashing</h3>
+<p>For MD5, we can test for "Hello":</p>
+<pre>Type:       MD5
+Message:    Hello
+Hex:    8b1a9953c4611296a827abf8c47804d7
+Base64: ixqZU8RhEpaoJ6v4xHgE1w==
+</pre>
+<p>If we test with Openssl:</p>
+<pre>echo -n Hello | openssl md5
+8b1a9953c4611296a827abf8c47804d7
+</pre>
+<p>For SHA-1:</p>
+<pre>Type:       SHA1
+Message:    Hello
+Hex:    f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
+Base64: 9/+ei3uy4Jtwk1pdeF4MxdnQq/A=
+</pre>
+<p>With OpenSSL we get:</p>
+<pre>echo -n Hello | openssl sha1
+f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
+</pre>
+<p>For 256-bit SHA-2:</p>
+<pre>Type:       SHA256
+Message:    Hello
+Hex:    185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969
+Base64: GF+NsyJx/iX1Yab8k4suJkMG7DBO2lGAB9F2SCY4GWk=
+</pre>
+<p>And with OpenSSL we get:</p>
+<pre>echo -n Hello | openssl sha256
+185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969
+</pre>
+<p>For RIPEMD160:</p>
+<pre>Type:       RIPEM160
+Message:    Hello
+Hex:    d44426aca8ae0a69cdbc4021c64fa5ad68ca32fe
+Base64: 1EQmrKiuCmnNvEAhxk+lrWjKMv4=
+</pre>
+<p>And with OpenSSL:</p>
+<pre>echo -n Hello | openssl sha1 -ripemd160
+d44426aca8ae0a69cdbc4021c64fa5ad68ca32fe
+</pre>
+<h3>Block encryption</h3>
+<p>A sample run for AES CBC gives:</p>
+<pre>Type:      AES (CBC)
+Message:    Hello
+Password:   qwerty
+Salt:       241fa86763b85341
+IV:     6be952ebc17eed10411eaa9892f19124
+Key:        33a5820536f9eeb709d88af3b40fdbb100c04327c71b5accf48424c8eb40c3f9
+Encrypted:  U2FsdGVkX18kH6hnY7hTQZAGxV2faF01w6uhO+X6+9Q=
+Decrypted:  Hello
+</pre>
+<p>We can test our outputs with Openssl. In this case the word "Hello" is used with a password of "qwerty", along with the IV and salt value:</p>
+<pre>echo -n Hello | openssl enc -aes-256-cbc  -pass pass:"qwerty" -e -base64 -S 241fa86763b85341
+U2FsdGVkX18kH6hnY7hTQZAGxV2faF01w6uhO+X6+9Q=
+</pre>
+<p>If we save the cipher to a file (in.txt), we can then decrypt it with:</p>
+<pre>openssl enc -aes-256-cbc  -pass pass:"qwerty" -d -base64 -S 241fa86763b85341 -in enc.txt -out out.txt
+</pre>
+<p>For DES we get:</p>
+<pre>Type:       DES
+Message:    Hello
+Password:   qwerty
+Salt:       b99d7b9a5fc533d2
+IV:     6181c17bd65c22e7
+Encrypted:  U2FsdGVkX1+5nXuaX8Uz0sy7jQgKtewQ
+Decrypted:  48656c6c6f
+</pre>
+<p>We can check this with:</p>
+<pre>echo -n Hello | openssl enc -des  -pass pass:"qwerty" -e -base64 -S b99d7b9a5fc533d2
+U2FsdGVkX1+5nXuaX8Uz0sy7jQgKtewQ
+</pre>
+<h3>HMAC</h3>
+<p>For HMAC-MD5 we get:</p>
+<pre>Type:       HMAC-MD5
+Message:    Hello
+Password:   qwerty
+Hex:    7f43007a026d9696566dc8c7bb2172e4
+Base64: f0MAegJtlpZWbcjHuyFy5A==
+</pre>
+<p>If we try OpenSSL we get:</p>
+<pre>echo -n Hello | openssl md5 -hmac qwerty
+7f43007a026d9696566dc8c7bb2172e4
+</pre>
+<p>For HMAC-SHA1:</p>
+<pre>Type:       HMAC-SHA1
+Message:    Hello
+Password:   qwerty
+Hex:    8c7cd4cb162bc91e4ee4573aba50ca00474e7c5d
+Base64: jHzUyxYryR5O5Fc6ulDKAEdOfF0=
+</pre>
+
+<p>And for OpenSSL:</p>
+<pre>echo -n Hello | openssl sha1 -hmac qwerty
+8c7cd4cb162bc91e4ee4573aba50ca00474e7c5d
+</pre>
+<p>For HMAC, we can test with Node.js:</p>
+<pre>var crypto = require('crypto');
+
+var key = 'qwerty';
+var message = 'Hello';
+
+var hash = crypto.createHmac('md5', key).update(message);
+
+// to lowercase hexits
+console.log(hash.digest('hex'));
+
+// to base64
+console.log(hash.digest('base64'));
+</pre>
+<p>And run with:</p>
+<pre>$ node h.js
+7f43007a026d9696566dc8c7bb2172e4
+</pre>
+<h3>Stream encryption</h3>
+<p>And for ChaCha20:</p>
+<pre>Type:      ChaCha20
+Input:      Hello
+Password:   qwerty
+Key seed: 65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5
+ (based on SHA-256 of qwerty)
+Key stream: 8b084a9003 (based on length of Hello)
+Text stream:    48656c6c6f
+Output stream:  c36d26fc6c
+</pre>
+<p>And for Poly1305:</p>
+<pre>Type       Poly1305
+Input:      Cryptographic Forum Research Group
+Input (Hex):    85d6be7857556d337f4452fe42d506a80103808afb0db2fd4abff6af4149f51b
+Password (Hex): 43727970746f6772617068696320466f72756d2052657365617263682047726f7570
+Tag:        a8061dc1305136c6c22b8baf0c0127a9
+</pre>
+
+<p>And for RSA we get a key pair of:</p>
+<pre>Key generated in 74 ms
+Private key:
+-----BEGIN RSA PRIVATE KEY-----
+MI ... KR3EXTfywjS6hAjyZCPj4Hi
+-----END RSA PRIVATE KEY-----
+Public key:
+-----BEGIN PUBLIC KEY-----
+MI ... sBYUeVJYhMU9gcwX
+-----END PUBLIC KEY-----
+</pre>
+<p>And a message of:</p>
+<pre>Encrypt/decrypt in 7 ms
+Text:   Hello
+Encrypt with public key:    uSYrZ6rYpViDlW3n6...w6Z231=
+Decrypt with private key:   Hello
+</pre>
+
+</body>
+</html>

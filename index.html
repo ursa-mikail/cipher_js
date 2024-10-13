@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/178732451?v=4&size=64" type="image/x-icon">
+    <title>Ciphering with CryptoJS JavaScript</title>
+    <script src="./index_files/jquery.min.js" type="text/javascript"></script>
+
+    <script async="" src="./index_files/widgets.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./index_files/MathJax.js"></script>
+    <script src="./index_files/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="./index_files/MicrosoftAjax.debug.js" type="text/javascript"></script>
+
+    <link href="./index_files/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="./index_files/Site.css" rel="stylesheet" type="text/css">
+    <link href="./index_files/mathjax.css" rel="stylesheet" type="text/css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="./index_files/js"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+        gtag('config', 'G-KX6DK1KK2X');</script>
+
+<script charset="utf-8" src="./index_files/button.856debeac157d9669cf51e73a08fbc93.js"></script>
+</head>
+
+
+<body style="width:100%;height:100%">
+<!-- watermark [START]: call in body -->
+    <script src="./index_files/watermark_page.js" type="text/javascript"></script>
+<!-- watermark [END] -->
+
+<div id="MathJax_Message" style="display: none;"></div>
+<div id="page-wrap">
+    
+<script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+    <div class="w3-container">
+        <div id="header" class="row">
+            <div id="title"></div>
+            <div id="logindisplay">
+
+<!--                
+<text><strong>Hello</strong></text>
+-->
+    <style>
+        /* Style for left alignment */
+        .left-align {
+            text-align: left;
+        }
+    </style>
+
+    <div class="left-align">
+        <text><strong id="helloText"></strong></text>
+    </div>
+    <script type="text/javascript" src="./index_files/load_and_type_random_line.js"></script>
+
+            </div>
+
+            <div id="tabs_container">
+                <div class="invertedshiftdown">
+                    <ul>
+                        <li><a id="homeLink" href="#">Home</a></li>
+                        <li class="current"><a id="indexLink" href="#">JS ciphers</a></li>
+                        <li><a id="link_to_about" href="#">About</a></li>
+                        <li><a id="link_to_scrambler" href="#">scrambler</a></li>
+
+    <script>
+        var homeURL = "https://ursa-mikail.github.io/";
+        var home_ext = "mikail-eliyah.github.io/";
+        document.getElementById("homeLink").href = homeURL + home_ext;
+        document.getElementById("indexLink").href = homeURL + home_ext + "index";
+        document.getElementById("link_to_about").href = homeURL + home_ext + "about";
+        document.getElementById("link_to_scrambler").href = homeURL + "scrambler";
+    </script>
+
+                    </ul>
+                </div>
+            </div>
+         
+            <div id="main" class="row">
+
+<img src="./index_files/header_js.gif" align="left" hspace="0" vspace="0" width="200px" alt="Pigpen" class="has-border">
+<h1 id="logo">JavaScript Encryption with CryptoJS</h1>
+
+<div id="home">
+<b>[<a href="https://ursa-mikail.github.io/mikail-eliyah.github.io/" target="_top">Home</a>]</b>
+</div>
+
+    <script type="text/javascript" src="./index_files/md5.js"></script>
+    <script type="text/javascript" src="./index_files/sha1.js"></script>
+    <script type="text/javascript" src="./index_files/sha3.js"></script>
+    <script type="text/javascript" src="./index_files/sha256.js"></script>
+    <script type="text/javascript" src="./index_files/sha512.js"></script>
+    <script type="text/javascript" src="./index_files/aes.js"></script>
+    <script type="text/javascript" src="./index_files/rabbit.js"></script>
+    <script type="text/javascript" src="./index_files/hmac-md5.js"></script>
+    <script type="text/javascript" src="./index_files/hmac-sha1.js"></script>
+    <script type="text/javascript" src="./index_files/hmac-sha3.js"></script>
+    <script type="text/javascript" src="./index_files/hmac-sha256.js"></script>
+    <script type="text/javascript" src="./index_files/pbkdf2.js"></script>
+    <script type="text/javascript" src="./index_files/rc4.js"></script>
+    <script type="text/javascript" src="./index_files/ripemd160.js"></script>
+    <script type="text/javascript" src="./index_files/tripledes.js"></script>
+    <script type="text/javascript" src="./index_files/nacl-fast.js"></script>
+    <script type="text/javascript" src="./index_files/chacha20.js"></script>
+    <script type="text/javascript" src="./index_files/poly1305.js"></script>
+    <script type="text/javascript" src="./index_files/utilities.js"></script>
+    <!-- ECC things -->
+    <script language="JavaScript" type="text/javascript" src="./index_files/jsbn.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./index_files/jsbn2.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./index_files/prng4.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./index_files/rng.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./index_files/ec.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./index_files/sec.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="./index_files/input_interfaces.js"></script> 
+
+<script type="text/javascript" src="./index_files/jsencrypt.js"></script>
+
+<div class="indented">
+    <table width="100%">
+        <tbody><tr>
+            <th width="15%">Input</th>
+            <td>  
+                <textarea cols="20" id="input" name="input" rows="2" style="width:100%">Hello</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>Password</th>
+            <td>
+                <textarea cols="20" id="password" name="password" rows="2" style="width:100%">qwerty</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>Method (Ciphers)</th>
+            <td style="text-align:left">
+
+                <p>
+                    Hashing: <input type="button" class="btn btn-medium btn-warning" onclick="t1(document.getElementById(&#39;input&#39;).value)" value="MD5">
+                    <input type="button" class="btn btn-medium btn-warning" onclick="t2(document.getElementById(&#39;input&#39;).value)" value="SHA1">
+                    <input type="button" class="btn btn-medium btn-warning" onclick="t3(document.getElementById(&#39;input&#39;).value)" value="SHA256">
+                    <input type="button" class="btn btn-medium btn-warning" onclick="t3b(document.getElementById(&#39;input&#39;).value)" value="SHA512">
+
+                    <input type="button" class="btn btn-medium btn-warning" onclick="t3a(document.getElementById(&#39;input&#39;).value)" value="SHA3 (Keccak)">
+                    <input type="button" class="btn btn-medium btn-warning" onclick="t3c(document.getElementById(&#39;input&#39;).value)" value="RIPEMD160">
+
+                    <input type="button" class="btn btn-medium btn-warning" onclick="t10(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="PBKDF2">
+                    <input type="button" class="btn btn-medium btn-warning" onclick="t10a(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="EvpKDF">
+                </p>
+
+                <p>
+                    Block encryption:  <input type="button" class="btn btn-medium btn-danger" onclick="t4(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="AES (CBC)">
+                    <input type="button" class="btn btn-medium btn-danger" onclick="t4a(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="AES (ECB)">
+                    <input type="button" class="btn btn-medium btn-danger" onclick="t4b(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="AES (CFB)">
+                    <input type="button" class="btn btn-medium btn-danger" onclick="t4c(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="AES (CTR)">
+                    <input type="button" class="btn btn-medium btn-danger" onclick="t4d(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="AES (OFB)">
+
+                    <input type="button" class="btn btn-medium btn-danger" onclick="t6b(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="DES">
+                    <input type="button" class="btn btn-medium btn-danger" onclick="t6b_2(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="3DES">
+
+                </p>
+                <p>
+                    Stream encryption:    <input type="button" class="btn btn-medium btn-primary" onclick="t5(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="Rabbit">
+                    <input type="button" class="btn btn-medium btn-primary" onclick="t6(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="RC4">
+                    <input type="button" class="btn btn-medium btn-primary" onclick="t11(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="ChaCha20">
+                </p>
+
+
+                <p>
+                    HMAC:   <input type="button" class="btn btn-medium btn-success" onclick="t7(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="HMAC (MD5)">
+                    <input type="button" class="btn btn-medium btn-success" onclick="t8(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="HMAC (SHA1)">
+                    <input type="button" class="btn btn-medium btn-success" onclick="t9c(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="HMAC (SHA256)">
+
+                    <input type="button" class="btn btn-medium btn-success" onclick="t9(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="HMAC (SHA512)">
+                    <input type="button" class="btn btn-medium btn-success" onclick="t9a(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="HMAC (SHA3)">
+                    <input type="button" class="btn btn-medium btn-success" onclick="t9b(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="HMAC (RIPEMD160)">
+               <br>    <input type="button" class="btn btn-medium btn-success" onclick="t12(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="Poly1305">
+                    <input type="button" class="btn btn-medium btn-success" onclick="t13(document.getElementById(&#39;input&#39;).value, document.getElementById(&#39;password&#39;).value)" value="Poly1305 (Test)">
+
+
+                </p>
+                <p>
+                    Public key:   <input type="button" class="btn btn-medium default" onclick="trsa(document.getElementById(&#39;input&#39;).value,1024)" value="RSA Encryption (1024 bit)">
+                    <input type="button" class="btn btn-medium default" onclick="trsa(document.getElementById(&#39;input&#39;).value,2048)" value="RSA Encryption (2048 bit)">
+                </p> <p>
+                    <input type="button" class="btn btn-medium default" onclick="do_pub(&#39;secp128r1&#39;)" value="ECC secp128r1 (128-bit)">
+                    <input type="button" class="btn btn-medium default" onclick="do_pub(&#39;secp160r1&#39;)" value="ECC secp160r1 (160-bit)">
+                    <input type="button" class="btn btn-medium default" onclick="do_pub(&#39;secp192r1&#39;)" value="ECC secp192r1 (192-bit)">
+
+                    <input type="button" class="btn btn-medium default" onclick="do_pub(&#39;secp256r1&#39;)" value="ECC secp256r1 (256-bit)">
+                    <input type="button" class="btn btn-medium default" onclick="do_pub(&#39;secp160k1&#39;)" value="ECC secp160k1 (160-bit)">
+                    <input type="button" class="btn btn-medium default" onclick="do_pub(&#39;secp192k1&#39;)" value="ECC secp192k1 (192-bit)">
+
+                    <input type="button" class="btn btn-medium default" onclick="do_pub(&#39;secp256k1&#39;)" value="ECC secp256k1 (256-bit)">
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Result</th>
+            <td>
+                <textarea cols="20" id="hash" name="hash" rows="8" style="width:100%"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>Further Outputs</th>
+            <td>
+                <textarea cols="20" id="key" name="key" rows="12" style="width:100%"></textarea>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+<script>
+    document.getElementById("input").innerHTML = "Hello Ursa";
+    document.getElementById("password").innerHTML = "secret";
+</script>
+<p>Note: Hashing takes Input, but Encryption and HMAC takes Input and Password.</p>
+<p>Note: If you have an empty password in ChaCha, you will get a password seed of '00..', and which should give an key stream of '76b8e0ada0..' [<a href="https://tools.ietf.org/html/draft-agl-tls-chacha20poly1305-00" target="_blank">Test vectors</a>]</p>
+<p>Test vectors for ChaCha and Poly1305 are [<a href="https://tools.ietf.org/html/rfc7539" target="_blank">here</a>].</p>
+<p>When encryption keys are used, SHA-256 of a password is used to generate the key.</p>
+
+<iframe src="./index_files/content_text.html" width="1200" height="400" frameborder="0" title="Test"></iframe>
+
+<h2>Code</h2>
+<pre>
+    
+    .....
+</pre>
+
+<h2>References</h2>
+1. Client-side JavaScript code to hashing, encrypt and sign [<a href="https://code.google.com/archive/p/crypto-js/downloads" target="_blank">code</a>]
+</div>
+<div>
+<iframe src="./index_files/footer.html" width="1200" height="400" frameborder="0" title="footer"></iframe>
+</div>
+</body></html>
